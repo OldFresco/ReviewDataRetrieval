@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
+using ReviewRatingResolver;
 using ReviewDataRetrieval.Models;
 
 namespace ReviewDataRetrieval
@@ -8,10 +9,12 @@ namespace ReviewDataRetrieval
     public class ReviewDataParser : IJsonParser
     {
         private readonly string _inputData;
+        private readonly ReviewRatingResolver _ratingResolver;
 
-        public ReviewDataParser(string inputData)
+        public ReviewDataParser(string inputData, ReviewRatingResolver ratingResolver)
         {
             _inputData = inputData;
+            _ratingResolver = new ratingResolver();
         }
 
         public List<ReviewData> ParseJsonData()
@@ -22,24 +25,14 @@ namespace ReviewDataRetrieval
 
             foreach (var item in items)
             {
-                var reviewDataElement = new ReviewData
+                var reviewDataRecord = new ReviewData
                 {
                     Title = item.snippet.title,
-                    Score = RetrieveDescriptionScore(item.snippet.description)
-                };
-            }
-        }
-
-        public string RetrieveDescriptionScore(string description)
-        {
-            var descriptionContentArray = description.Split(null);
-
-            foreach (var word in descriptionContentArray.Where(word => isThisWordAScore))
-            {
-                return word;
-            }
-
-            return "Couldn't resolve a score";
+                    Rating = _ratingResolver.RetrieveRatingFromDescription(item.snippet.description)
+                };               
+                reviewDataList.add(reviewDataRecord)
+            }           
+            return reviewDataList;
         }
     }
 }
