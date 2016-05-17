@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using ReviewRatingResolver;
 using ReviewDataRetrieval.Models;
 
 namespace ReviewDataRetrieval
@@ -11,10 +8,10 @@ namespace ReviewDataRetrieval
         private readonly string _inputData;
         private readonly ReviewRatingResolver _ratingResolver;
 
-        public ReviewDataParser(string inputData, ReviewRatingResolver ratingResolver)
+        public ReviewDataParser(string inputData)
         {
             _inputData = inputData;
-            _ratingResolver = new ratingResolver();
+            _ratingResolver = new ReviewRatingResolver();
         }
 
         public List<ReviewData> ParseJsonData()
@@ -29,9 +26,9 @@ namespace ReviewDataRetrieval
                 {
                     Title = item.snippet.title,
                     Rating = _ratingResolver.RetrieveRatingFromDescription(item.snippet.description)
-                };               
-                reviewDataList.add(reviewDataRecord)
-            }           
+                };
+                reviewDataList.Add(reviewDataRecord);
+            }
             return reviewDataList;
         }
     }

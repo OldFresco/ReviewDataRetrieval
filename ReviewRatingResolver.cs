@@ -4,7 +4,7 @@ namespace ReviewDataRetrieval
 {
     public class ReviewRatingResolver
     {
-        private readonly const List<string> ratingList = new List<string>();
+        private readonly List<string> ratingList = new List<string>();
         
         public ReviewRatingResolver()
         {
@@ -23,7 +23,7 @@ namespace ReviewDataRetrieval
                 
         public string RetrieveRatingFromDescription(string reviewDescription)
         {
-            reviewDescription = reviewDescription.Split(null);
+            var descriptionContentArray = reviewDescription.Split(null);
             var rating = "rating not found";
             
             foreach(var word in descriptionContentArray)

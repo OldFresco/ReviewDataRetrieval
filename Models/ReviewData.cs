@@ -1,5 +1,4 @@
-﻿using System;
-namespace ReviewDataRetrieval.Models
+﻿namespace ReviewDataRetrieval.Models
 {
     public class ReviewData
     {
