@@ -25,8 +25,8 @@ namespace ReviewDataRetrieval
             {
                 var reviewDataRecord = new ReviewData
                 {
-                    Title = item.snippet.title,
-                    Rating = _ratingResolver.RetrieveRatingFromDescription(item.snippet.description)
+                    Title = item.snippet.title.ToString(),
+                    Rating = _ratingResolver.RetrieveRatingFromDescription(item.snippet.description.ToString())
                 };
                 reviewDataList.Add(reviewDataRecord);
             }
