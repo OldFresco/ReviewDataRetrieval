@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using ReviewDataRetrieval.Models;
+﻿using ReviewDataRetrieval.Models;
+using System.Collections.Generic;
 
 namespace ReviewDataRetrieval
 {
