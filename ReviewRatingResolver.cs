@@ -38,7 +38,7 @@ namespace ReviewDataRetrieval
         
         public bool stringIsRating(string word)
         {
-            return ratingList.Contains(word) ? true : false;
+            return ratingList.Contains(word);
         }
      }
 }
