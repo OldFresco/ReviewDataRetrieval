@@ -28,7 +28,7 @@ namespace ReviewDataRetrieval
             
             foreach(var word in descriptionContentArray)
             {
-                if (stringIsRating(word))
+                if (StringIsRating(word))
                 {
                     rating = word;
                 }
@@ -36,7 +36,7 @@ namespace ReviewDataRetrieval
             return rating;        
         }
         
-        public bool stringIsRating(string word)
+        public bool StringIsRating(string word)
         {
             return ratingList.Contains(word);
         }
