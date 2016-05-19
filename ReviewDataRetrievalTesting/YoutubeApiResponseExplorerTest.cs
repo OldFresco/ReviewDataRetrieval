@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using System.IO;
-using ReviewDataRetrieval.Models;
 using ReviewDataRetrieval;
 
 namespace ReviewDataRetrievalTesting

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 using ReviewDataRetrieval.Models;
 
@@ -31,6 +32,11 @@ namespace ReviewDataRetrieval
                 reviewDataList.Add(reviewDataRecord);
             }
             return reviewDataList;
+        }
+
+        public string ConvertReviewDataListToCsv(List<ReviewDatum> reviewList)
+        {
+            return reviewList.Aggregate("", (current, record) => current + (record.Title + "," + record.Rating)+"\n");
         }
     }
 }
