@@ -25,10 +25,9 @@ namespace ReviewDataRetrieval
                 var listOfReviewDataRecords = converter.ConvertJsonToReviewDataList();
 
                 var csvDataSet = listOfReviewDataRecords.Aggregate("", (current, record) => current + (record.ToCSV() + "\n"));
-
                 Console.WriteLine("Number of Records Found: " + listOfReviewDataRecords.Count.ToString());
-                Console.ReadLine();
             }
+            Console.ReadLine();
         }
     }
 }
