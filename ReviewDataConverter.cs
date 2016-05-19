@@ -4,29 +4,29 @@ using ReviewDataRetrieval.Models;
 
 namespace ReviewDataRetrieval
 {
-    public class ReviewDataParser : IJsonParser
+    public class ReviewDataConverter : IJsonConverter
     {
         private readonly string _inputData;
-        private readonly ReviewRatingResolver _ratingResolver;
+        private readonly ReviewRatingScanner _ratingResolver;
 
-        public ReviewDataParser(string inputData)
+        public ReviewDataConverter(string inputData)
         {
             _inputData = inputData;
-            _ratingResolver = new ReviewRatingResolver();
+            _ratingResolver = new ReviewRatingScanner();
         }
 
-        public List<ReviewData> ParseJsonData()
+        public List<ReviewDatum> ConvertJsonToReviewDataList()
         {
-            var reviewDataList = new List<ReviewData>();
+            var reviewDataList = new List<ReviewDatum>();
             dynamic jsonObject = JsonConvert.DeserializeObject(_inputData);
             var items = jsonObject.items;
 
             foreach (var item in items)
             {
-                var reviewDataRecord = new ReviewData
+                var reviewDataRecord = new ReviewDatum
                 {
                     Title = item.snippet.title.ToString(),
-                    Rating = _ratingResolver.RetrieveRatingFromDescription(item.snippet.description.ToString())
+                    Rating = _ratingResolver.FindFirstRatingOrDefault(item.snippet.description.ToString())
                 };
                 reviewDataList.Add(reviewDataRecord);
             }

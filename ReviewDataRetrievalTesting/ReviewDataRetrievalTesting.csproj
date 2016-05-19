@@ -54,8 +54,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ReviewRatingResolverTest.cs" />
-    <Compile Include="ReviewDataParserTest.cs" />
+    <Compile Include="ReviewRatingScannerTest.cs" />
+    <Compile Include="ReviewDataConverterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

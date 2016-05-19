@@ -3,8 +3,8 @@ using ReviewDataRetrieval.Models;
 
 namespace ReviewDataRetrieval
 {
-    public interface IJsonParser
+    public interface IJsonConverter
     {
-        List<ReviewData> ParseJsonData();
+        List<ReviewDatum> ConvertJsonToReviewDataList();
     }
 }
