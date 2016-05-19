@@ -37,7 +37,7 @@ namespace ReviewDataRetrieval.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PLP4CSgl7K7orSnEBkcBRqI5fDgKSs5c8o")]
+        [global::System.Configuration.DefaultSettingValueAttribute("UUt7fwAhXDy3oNFTAzF2o8Pw")]
         public string playlistId {
             get {
                 return ((string)(this["playlistId"]));

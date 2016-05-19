@@ -14,17 +14,15 @@ namespace ReviewDataRetrieval
 
         public string GetNextPageToken()
         {
-            var token = _deserializedJsonResponse.nextPageToken.ToString();
-
-            return token;
+            return _deserializedJsonResponse.nextPageToken == null ? "no more tokens" : _deserializedJsonResponse.nextPageToken.ToString();
         }
 
-        public int GetNumberOfResponsePages()
+        public int GetNumberOfUploads()
         {
-            var numberOfPages = 0;
-            int.TryParse(_deserializedJsonResponse.pageInfo.totalResults.ToString(), out numberOfPages); ;
+            var numberOfUploads = 0;
+            int.TryParse(_deserializedJsonResponse.pageInfo.totalResults.ToString(), out numberOfUploads); ;
 
-            return numberOfPages;
+            return numberOfUploads;
         }
     }
 }

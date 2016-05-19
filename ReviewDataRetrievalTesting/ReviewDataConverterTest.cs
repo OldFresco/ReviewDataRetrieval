@@ -24,7 +24,7 @@ namespace ReviewDataRetrievalTesting
         }
 
         [Test]
-        public void GivenJsonFormattedReviewData_WhenConvertReviewDataListToCsvIsCalled_ThenValidReviewListObjectIsReturned()
+        public void GivenJsonFormattedReviewData_WhenConvertReviewDataListToCsvIsCalled_ThenCSVDataIsReturned()
         {
             const string expectedResult = "TestA,5/10\nTestB,8/10\n";
             var reviewParser = new ReviewDataConverter(Properties.Resources.reviewTestJsonFile);
