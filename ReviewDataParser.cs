@@ -3,7 +3,7 @@ using ReviewDataRetrieval.Models;
 
 namespace ReviewDataRetrieval
 {
-    public class ReviewDataParser : IJsonParser
+    public class ReviewDataParser : IJsonConverter
     {
         private readonly string _inputData;
         private readonly ReviewRatingResolver _ratingResolver;
@@ -14,7 +14,7 @@ namespace ReviewDataRetrieval
             _ratingResolver = new ReviewRatingResolver();
         }
 
-        public List<ReviewData> ParseJsonData()
+        public List<ReviewData> ConvertJsonToReviewDataList()
         {
             var reviewDataList = new List<ReviewData>();
             dynamic jsonObject = Newtonsoft.Json.JsonConvert.DeserializeObject(_inputData);

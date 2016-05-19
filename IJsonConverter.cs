@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace ReviewDataRetrieval
 {
-    public interface IJsonParser
+    public interface IJsonConverter
     {
-        List<ReviewData> ParseJsonData();
+        List<ReviewData> ConvertJsonToReviewDataList();
     }
 }
