@@ -18,18 +18,17 @@ namespace ReviewDataRetrieval
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = response.Content;
-                    string responseString = responseContent.ReadAsStringAsync().Result;
-                    
-                    var parser = new ReviewDataParser(responseString);
-                    
-                    var listOfReviewDataRecords = parser.ParseJsonData();
-                    
+                    var responseString = responseContent.ReadAsStringAsync().Result;                  
+                    var parser = new ReviewDataParser(responseString);                 
+                    var listOfReviewDataRecords = parser.ParseJsonData();                     
                     var csvDataSet = "";
                     
                     foreach (var record in listOfReviewDataRecords)
                     {
-                        csvDataSet += record.ToCSV();
+                        csvDataSet += record.ToCSV()+"\n";
                     }
+                    
+                    System.Console.WriteLine("Number of Records Found: "+listOfReviewDataRecords.Count.ToString());
                 }
             }
         }
