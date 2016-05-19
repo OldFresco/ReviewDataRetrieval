@@ -10,8 +10,7 @@ namespace ReviewDataRetrievalTesting
         [Test]
         public void GivenJsonFormattedReviewData_WhenParseJsonDataIsCalled_ThenValidReviewListObjectIsReturned()
         {
-            var jsonReviewData = File.ReadAllText(@"C:\Users\kojo.hinson\Documents\Dev\Sandpit\needledrop-review-data-mining-vs\needledrop-review-data-mining\ReviewDataRetrievalTesting\review_test_data.json");
-            var reviewParser = new ReviewDataConverter(jsonReviewData);
+            var reviewParser = new ReviewDataConverter(Properties.Resources.reviewTestJsonFile);
             var expectedResult = new ReviewDatum
             {
                 Title = "James Blake - The Colour In Anything ALBUM REVIEW",
