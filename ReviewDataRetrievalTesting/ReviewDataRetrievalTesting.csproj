@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="YoutubeApiResponseExplorerTest.cs" />
     <Compile Include="ReviewRatingScannerTest.cs" />
     <Compile Include="ReviewDataConverterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,9 +68,7 @@
     <None Include="packages.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="reviewTestJsonFile.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="reviewTestJsonFile.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReviewDataRetrieval.csproj">
