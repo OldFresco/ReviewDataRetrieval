@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Http;
 
 namespace ReviewDataRetrieval
@@ -8,12 +7,13 @@ namespace ReviewDataRetrieval
     {
         private static void Main(string[] args)
         {
+            if (args == null) throw new ArgumentNullException(nameof(args));
             var apiKey = Properties.Settings.Default.apiKey;
             var playlistId = Properties.Settings.Default.playlistId;
             var baseUrl = Properties.Settings.Default.baseUrl;
             var playlistUrl = baseUrl + "&playlistId=" + playlistId + "&key=" + apiKey;
             var csvDataSet = "";
-            var nextPageToken = "";
+            string nextPageToken;
 
             //Get first page response to figure out whether we need to iterate over pages (as there's a 50 results per page limit)
             using (var client = new HttpClient())
@@ -29,8 +29,6 @@ namespace ReviewDataRetrieval
 
                 var jsonExplorer = new YouTubeApiResponseExplorer(responseString);
                 nextPageToken = jsonExplorer.GetNextPageToken();
-
-                Console.WriteLine(csvDataSet);
             }
 
             //Do iteration if needed.
