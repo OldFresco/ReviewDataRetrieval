@@ -36,7 +36,7 @@ namespace ReviewDataRetrieval
                     var jsonExplorer = new YouTubeApiResponseExplorer(responseString);
                     nextPageToken = jsonExplorer.GetNextPageToken();
                     playlistUrl  = (nextPageToken != null) ? = baseUrl + "&pageToken=" + nextPageToken + "&playlistId=" + playlistId + "&key=" +
-                                    apiKey; : "";
+                                    apiKey : "";
                 } while (nextPageToken != null);
             }
             

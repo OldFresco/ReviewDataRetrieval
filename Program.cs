@@ -8,7 +8,7 @@ namespace ReviewDataRetrieval
         private static void Main(string[] args)
         {
             var dataMiner = new ReviewRatingDataMiner(Properties.Settings.Default.playlistId,"/filePath.csv");
-            dataMiner.Execut();
+            dataMiner.Execute();
         }
     }
 }
