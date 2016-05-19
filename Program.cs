@@ -19,8 +19,8 @@ namespace ReviewDataRetrieval
                 {
                     var responseContent = response.Content;
                     var responseString = responseContent.ReadAsStringAsync().Result;                  
-                    var parser = new ReviewDataParser(responseString);                 
-                    var listOfReviewDataRecords = parser.ConvertJsonToReviewDataList();                     
+                    var converter = new ReviewDataConverter(responseString);                 
+                    var listOfReviewDataRecords = converter.ConvertJsonToReviewDataList();                     
                     var csvDataSet = "";
                     
                     foreach (var record in listOfReviewDataRecords)

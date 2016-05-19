@@ -5,6 +5,6 @@ namespace ReviewDataRetrieval
 {
     public interface IJsonConverter
     {
-        List<ReviewData> ConvertJsonToReviewDataList();
+        List<ReviewDatum> ConvertJsonToReviewDataList();
     }
 }
