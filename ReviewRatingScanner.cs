@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace ReviewDataRetrieval
 {
-    public class ReviewRatingResolver
+    public class ReviewRatingScanner
     {
         private readonly List<string> ratingList = new List<string>();
 
-        public ReviewRatingResolver()
+        public ReviewRatingScanner()
         {
             ratingList.Add("0/10");
             ratingList.Add("1/10");
@@ -22,7 +22,7 @@ namespace ReviewDataRetrieval
             ratingList.Add("10/10");
         }
 
-        public string RetrieveRatingFromDescription(string reviewDescription)
+        public string FindFirstRatingOrDefault(string reviewDescription)
         {
             var descriptionContentArray = reviewDescription.Split(null);
             var rating = "rating not found";
