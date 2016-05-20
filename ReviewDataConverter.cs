@@ -8,12 +8,12 @@ namespace ReviewDataRetrieval
     public class ReviewDataConverter : IJsonConverter
     {
         private readonly string _inputData;
-        private readonly ReviewRatingScanner _ratingResolver;
+        private readonly ReviewDescriptionScanner _descriptionScanner;
 
         public ReviewDataConverter(string inputData)
         {
             _inputData = inputData;
-            _ratingResolver = new ReviewRatingScanner();
+            _descriptionScanner = new ReviewDescriptionScanner();
         }
 
         public List<ReviewDatum> ConvertJsonToReviewDataList()
@@ -27,7 +27,7 @@ namespace ReviewDataRetrieval
                 var reviewDataRecord = new ReviewDatum
                 {
                     Title = item.snippet.title.ToString(),
-                    Rating = _ratingResolver.FindFirstRatingOrDefault(item.snippet.description.ToString())
+                    Rating = _descriptionScanner.FindFirstRatingOrDefault(item.snippet.description.ToString())
                 };
                 reviewDataList.Add(reviewDataRecord);
             }

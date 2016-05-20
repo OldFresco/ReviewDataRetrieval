@@ -60,7 +60,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="YoutubeApiResponseExplorerTest.cs" />
-    <Compile Include="ReviewRatingScannerTest.cs" />
+    <Compile Include="ReviewDescriptionScannerTest.cs" />
     <Compile Include="ReviewDataConverterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

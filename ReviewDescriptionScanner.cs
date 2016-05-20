@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace ReviewDataRetrieval
 {
-    public class ReviewRatingScanner
+    public class ReviewDescriptionScanner
     {
         private readonly List<string> _ratingList = new List<string>();
 
-        public ReviewRatingScanner()
+        public ReviewDescriptionScanner()
         {
             _ratingList.Add("0/10");
             _ratingList.Add("1/10");

@@ -59,7 +59,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ReviewDataConverter.cs" />
-    <Compile Include="ReviewRatingScanner.cs" />
+    <Compile Include="ReviewDescriptionScanner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

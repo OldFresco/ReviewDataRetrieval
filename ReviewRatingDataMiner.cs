@@ -19,7 +19,7 @@ namespace ReviewDataRetrieval
         public void Execute()
         {
             var playlistUrl = _baseUrl + "&playlistId=" + _playlistId + "&key=" + _apiKey;
-            var csvDataSet = "";
+            var csvData = "";
 
             using (var client = new HttpClient())
             {
@@ -31,7 +31,7 @@ namespace ReviewDataRetrieval
                     var responseString = response.Content.ReadAsStringAsync().Result;
                     var converter = new ReviewDataConverter(responseString);
                     var listOfReviewDataRecords = converter.ConvertJsonToReviewDataList();
-                    csvDataSet += converter.ConvertReviewDataListToCsv(listOfReviewDataRecords);
+                    csvData += converter.ConvertReviewDataListToCsv(listOfReviewDataRecords);
 
                     var jsonExplorer = new YouTubeApiResponseExplorer(responseString);
                     nextPageToken = jsonExplorer.GetNextPageToken();
@@ -43,7 +43,7 @@ namespace ReviewDataRetrieval
                 } while (nextPageToken != "no more tokens");
             }
 
-            Console.WriteLine(csvDataSet);
+            Console.WriteLine(csvData);
             Console.ReadLine();
         }
     }
