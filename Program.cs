@@ -2,35 +2,67 @@
 
 namespace ReviewDataRetrieval
 {
-    public class Program
+ public class Program
     {
-        private static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var apiKey = "AIzaSyC198AyRLiVMrcVZV-Wfs8A3SimJNh8VLQ";
-            var playlistId = "PLP4CSgl7K7orSnEBkcBRqI5fDgKSs5c8o";
-            var baseUrl = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50";
-            var needleDropPlaylistUrl = baseUrl + "&playlistId=" + playlistId + "&key=" + apiKey;
-
-            using (var client = new HttpClient())
+            Console.WriteLine(@"
+ ========================================================  
+  _   _               _ _      ____                  
+ | \ | | ___  ___  __| | | ___|  _ \ _ __ ___  _ __  
+ |  \| |/ _ \/ _ \/ _` | |/ _ \ | | | '__/ _ \| '_ \ 
+ | |\  |  __/  __/ (_| | |  __/ |_| | | | (_) | |_) |
+ |_|_\_|\___|\___|\__,_|_|\___|____/|_|  \___/| .__/ 
+ |  _ \  __ _| |_ __ _  |  \/  (_)_ __   ___ _|_|    
+ | | | |/ _` | __/ _` | | |\/| | | '_ \ / _ \ '__|   
+ | |_| | (_| | || (_| | | |  | | | | | |  __/ |      
+ |____/ \__,_|\__\__,_| |_|  |_|_|_| |_|\___|_|      
+ 
+ =========================================================
+                                                     ");
+            Console.WriteLine("  Ay! Welcome to the NeedleDrop Data Mining Console App");
+            Console.WriteLine();
+            Console.WriteLine(" ---------------------------------------------------------");
+            Console.WriteLine(@"
+            
+Select one of the following options to start:");
+            Console.WriteLine(@"
+            
+1. Do this
+2. Do that
+3. Do this
+4. Do that
+5. Exit
+");
+            Console.WriteLine("\n");
+            bool exit = false;
+            do
             {
-                var response = client.GetAsync(needleDropPlaylistUrl).Result;
-
-                if (response.IsSuccessStatusCode)
+                string option = Console.ReadLine();
+                switch (option)
                 {
-                    var responseContent = response.Content;
-                    var responseString = responseContent.ReadAsStringAsync().Result;                  
-                    var parser = new ReviewDataParser(responseString);                 
-                    var listOfReviewDataRecords = parser.ParseJsonData();                     
-                    var csvDataSet = "";
-                    
-                    foreach (var record in listOfReviewDataRecords)
-                    {
-                        csvDataSet += record.ToCSV()+"\n";
-                    }
-                    
-                    System.Console.WriteLine("Number of Records Found: "+listOfReviewDataRecords.Count.ToString());
+                    case "1":
+		                Console.WriteLine();
+                        break;
+                    case "2":
+		                Console.WriteLine();
+                        break;
+                    case "3":
+		                Console.WriteLine();
+                        break;
+                    case "4":
+		                Console.WriteLine();
+                        break;
+                    case "5":
+                        exit = true;
+		                Console.WriteLine("Bye!");
+                        break;
+                    default:
+                        Console.WriteLine("Sorry, not happening! Try again.");
+                        break;
                 }
-            }
+                Console.WriteLine();    
+            } while (exit == false);                                                                
         }
     }
 }
