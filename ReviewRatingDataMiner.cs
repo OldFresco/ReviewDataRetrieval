@@ -6,7 +6,7 @@ namespace ReviewDataRetrieval
     public class ReviewRatingDataMiner
     {
         private readonly string _outputFilePath;
-        private readonly string _ApiKey = Properties.Settings.Default.apiKey;
+        private readonly string _apiKey = Properties.Settings.Default.apiKey;
         private readonly string _playlistId;
         private readonly string _baseUrl = Properties.Settings.Default.baseUrl;
         
@@ -18,14 +18,14 @@ namespace ReviewDataRetrieval
         
         public void Execute()
         {
-            var playlistUrl = baseUrl + "&playlistId=" + playlistId + "&key=" + apiKey;
+            var playlistUrl = _baseUrl + "&playlistId=" + _playlistId + "&key=" + _apiKey;
             var csvDataSet = "";
-            string nextPageToken;
-            
+
             using (var client = new HttpClient())
             {
+                string nextPageToken;
                 do
-                { 
+                {
                     var response = client.GetAsync(playlistUrl).Result;
                     if (!response.IsSuccessStatusCode) return;
                     var responseString = response.Content.ReadAsStringAsync().Result;
@@ -35,11 +35,14 @@ namespace ReviewDataRetrieval
 
                     var jsonExplorer = new YouTubeApiResponseExplorer(responseString);
                     nextPageToken = jsonExplorer.GetNextPageToken();
-                    playlistUrl  = (nextPageToken != null) ? = baseUrl + "&pageToken=" + nextPageToken + "&playlistId=" + playlistId + "&key=" +
-                                    apiKey : "";
-                } while (nextPageToken != null);
+
+                    if (nextPageToken != "no more tokens")
+                    {
+                        playlistUrl = _baseUrl + "&pageToken=" + nextPageToken + "&playlistId=" + _playlistId + "&key=" + _apiKey;
+                    }
+                } while (nextPageToken != "no more tokens");
             }
-            
+
             Console.WriteLine(csvDataSet);
             Console.ReadLine();
         }
