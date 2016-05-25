@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ReviewDataRetrieval.Models;
+using NeedleDropReviewDataMiner.Models;
 
-namespace ReviewDataRetrieval
+namespace NeedleDropReviewDataMiner
 {
     public interface IJsonConverter
     {

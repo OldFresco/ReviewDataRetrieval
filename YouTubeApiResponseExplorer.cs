@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace ReviewDataRetrieval
+namespace NeedleDropReviewDataMiner
 {
     public class YouTubeApiResponseExplorer
     {

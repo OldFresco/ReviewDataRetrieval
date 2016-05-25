@@ -7,7 +7,7 @@
     <ProjectGuid>{51F5172F-F6B8-4999-9ABC-A30545A2DDA8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ReviewDataRetrieval</RootNamespace>
+    <RootNamespace>NeedleDropReviewDataMiner</RootNamespace>
     <AssemblyName>ReviewDataRetrieval</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

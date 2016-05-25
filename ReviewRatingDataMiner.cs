@@ -1,7 +1,8 @@
 using System;
 using System.Net.Http;
+using NeedleDropReviewDataMiner;
 
-namespace ReviewDataRetrieval
+namespace NeedleDropReviewDataMiner
 {
     public class ReviewRatingDataMiner
     {

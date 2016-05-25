@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using ReviewDataRetrieval;
+using NeedleDropReviewDataMiner;
 
-namespace ReviewDataRetrievalTesting
+namespace NeedleDropReviewDataMiner
 {
     public class ReviewDescriptionScannerTest
     {

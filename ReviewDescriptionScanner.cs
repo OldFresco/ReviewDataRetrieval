@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ReviewDataRetrieval
+namespace NeedleDropReviewDataMiner
 {
     public class ReviewDescriptionScanner
     {

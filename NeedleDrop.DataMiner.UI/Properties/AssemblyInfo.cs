@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NeedleDropReviewDataMiner")]
+[assembly: AssemblyTitle("NeedleDrop.DataMiner.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ReviewDataMiner")]
+[assembly: AssemblyProduct("NeedleDrop.DataMiner.UI")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("51f5172f-f6b8-4999-9abc-a30545a2dda8")]
+[assembly: Guid("fa1d1e5c-2429-48ec-b7f2-b1e86411eccb")]
 
 // Version information for an assembly consists of the following four values:
 //

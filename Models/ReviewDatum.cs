@@ -1,4 +1,4 @@
-﻿namespace ReviewDataRetrieval.Models
+﻿namespace NeedleDropReviewDataMiner.Models
 {
     public class ReviewDatum
     {

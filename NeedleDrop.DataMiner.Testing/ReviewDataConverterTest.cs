@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
-using ReviewDataRetrieval.Models;
-using ReviewDataRetrieval;
+using NeedleDropReviewDataMiner.Models;
+using NeedleDropReviewDataMiner;
 
-namespace ReviewDataRetrievalTesting
+namespace NeedleDropReviewDataMiner
 {
     public class ReviewDataConverterTest
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
-using ReviewDataRetrieval.Models;
+using NeedleDropReviewDataMiner.Models;
 
-namespace ReviewDataRetrieval
+namespace NeedleDropReviewDataMiner
 {
     public class ReviewDataConverter : IJsonConverter
     {
