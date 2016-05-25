@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using NeedleDropReviewDataMiner;
 
 namespace NeedleDrop.DataMiner.UI
 {
@@ -31,11 +30,7 @@ namespace NeedleDrop.DataMiner.UI
             SectionPadding = 1;
             MainBanner = new UIBannerSection(1, 1, title, true);
             IntroSectionText = "Ay! Welcome to the NeedleDrop Data Mining Console App. \n \nPlease Select one of the following options: \n";
-            UserActionList = new List<string>();
-            UserActionList.Add(" Action 1");
-            UserActionList.Add(" Action 2");
-            UserActionList.Add(" Action 3");
-            UserActionList.Add(" Exit \n");
+            UserActionList = new List<string> {" Action 1", " Action 2", " Action 3", " Exit \n"};
         }
         public void DisplayMainBanner()
         {
@@ -52,7 +47,7 @@ namespace NeedleDrop.DataMiner.UI
             var actionId = 1;
             foreach (var action in UserActionList)
             {
-                Console.WriteLine(actionId.ToString() + action + "\n");
+                Console.WriteLine(actionId + action + "\n");
                 actionId++;
             }
         }
