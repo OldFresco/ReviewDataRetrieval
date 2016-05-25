@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using NeedleDropReviewDataMiner;
 
-namespace NeedleDropReviewDataMiner
+namespace NeedleDrop.DataMiner.UI
 {
     public class DataMinerConsoleUI
     {

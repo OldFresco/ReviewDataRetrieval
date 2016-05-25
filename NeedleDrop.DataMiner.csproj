@@ -69,6 +69,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="NeedleDrop.DataMiner.UI\NeedleDrop.DataMiner.UI.csproj">
+      <Project>{fa1d1e5c-2429-48ec-b7f2-b1e86411eccb}</Project>
+      <Name>NeedleDrop.DataMiner.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
