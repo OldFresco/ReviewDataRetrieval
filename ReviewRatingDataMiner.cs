@@ -47,5 +47,11 @@ namespace NeedleDropReviewDataMiner
             Console.WriteLine(csvData);
             Console.ReadLine();
         }
+
+        public void GetReviewDataString()
+        { }
+
+        public void SaveAsCSV()
+        { }
     }
 }
