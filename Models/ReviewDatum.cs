@@ -7,7 +7,14 @@
 
         public string ToCsv()
         {
-            return Title + "," + Rating;
+            return ParseTitle(Title) + "," + Rating;
+        }
+
+        private static string ParseTitle(string rawTitle)
+        {
+            var preclean = rawTitle.Replace("ALBUM REVIEW", "");
+
+            return preclean.Replace("MIXTAPE REVIEW", "");
         }
     }
 }
