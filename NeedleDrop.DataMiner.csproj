@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="IJsonConverter.cs" />
     <Compile Include="ReviewRatingDataMiner.cs" />
+    <Compile Include="ReviewType.cs" />
     <Compile Include="YouTubeApiResponseExplorer.cs" />
     <Compile Include="Models\ReviewDatum.cs" />
     <Compile Include="Program.cs" />

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net.Http;
-using NeedleDrop.DataMiner.UI;
 
 namespace NeedleDropReviewDataMiner
 {
@@ -8,7 +6,8 @@ namespace NeedleDropReviewDataMiner
     {
         private static void Main(string[] args)
         {
-            var dataMiner = new ReviewRatingDataMiner(Properties.Settings.Default.playlistId,"/filePath.csv");
+            if (args == null) throw new ArgumentNullException(nameof(args));
+            var dataMiner = new ReviewRatingDataMiner(Properties.Settings.Default.playlistId);
             dataMiner.Execute();
         }
     }

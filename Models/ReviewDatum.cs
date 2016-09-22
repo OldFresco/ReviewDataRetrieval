@@ -5,9 +5,9 @@
         public string Title { get; set; }
         public string Rating { get; set; }
 
-        public string ToCSV()
+        public string ToCsv()
         {
-            return Title.ToString() + "," + Rating.ToString();
+            return Title + "," + Rating;
         }
     }
 }
