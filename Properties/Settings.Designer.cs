@@ -37,7 +37,7 @@ namespace NeedleDropReviewDataMiner.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("UUt7fwAhXDy3oNFTAzF2o8Pw")]
+        [global::System.Configuration.DefaultSettingValueAttribute("PLP4CSgl7K7or_7JI7RsEsptyS4wfLFGIN")]
         public string playlistId {
             get {
                 return ((string)(this["playlistId"]));

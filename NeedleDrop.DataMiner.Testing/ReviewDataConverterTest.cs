@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using NeedleDropReviewDataMiner.Models;
-using NeedleDropReviewDataMiner;
 
 namespace NeedleDropReviewDataMiner
 {
+    [TestFixture]
     public class ReviewDataConverterTest
     {
         [Test]

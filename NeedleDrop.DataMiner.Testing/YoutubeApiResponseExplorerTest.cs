@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
-using NeedleDropReviewDataMiner;
 
 namespace NeedleDropReviewDataMiner
 {
+    [TestFixture]
     public class YoutubeApiResponseExplorerTest
     {
         [Test]

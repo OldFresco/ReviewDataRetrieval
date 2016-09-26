@@ -6,7 +6,7 @@
       <Value Profile="(Default)">AIzaSyC198AyRLiVMrcVZV-Wfs8A3SimJNh8VLQ</Value>
     </Setting>
     <Setting Name="playlistId" Type="System.String" Scope="User">
-      <Value Profile="(Default)">UUt7fwAhXDy3oNFTAzF2o8Pw</Value>
+      <Value Profile="(Default)">PLP4CSgl7K7or_7JI7RsEsptyS4wfLFGIN</Value>
     </Setting>
     <Setting Name="baseUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&amp;maxResults=50</Value>
